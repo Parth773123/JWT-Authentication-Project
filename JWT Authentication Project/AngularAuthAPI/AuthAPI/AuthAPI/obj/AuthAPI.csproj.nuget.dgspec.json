@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Personal Projects\\Full Stack Projects\\Login and Sign Up Page\\AngularAuthAPI\\AuthAPI\\AuthAPI\\AuthAPI.csproj": {}
+    "C:\\Personal Projects\\Full Stack Projects\\Login and Sign Up Page\\JWT Authentication Project\\AngularAuthAPI\\AuthAPI\\AuthAPI\\AuthAPI.csproj": {}
   },
   "projects": {
-    "C:\\Personal Projects\\Full Stack Projects\\Login and Sign Up Page\\AngularAuthAPI\\AuthAPI\\AuthAPI\\AuthAPI.csproj": {
+    "C:\\Personal Projects\\Full Stack Projects\\Login and Sign Up Page\\JWT Authentication Project\\AngularAuthAPI\\AuthAPI\\AuthAPI\\AuthAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Personal Projects\\Full Stack Projects\\Login and Sign Up Page\\AngularAuthAPI\\AuthAPI\\AuthAPI\\AuthAPI.csproj",
+        "projectUniqueName": "C:\\Personal Projects\\Full Stack Projects\\Login and Sign Up Page\\JWT Authentication Project\\AngularAuthAPI\\AuthAPI\\AuthAPI\\AuthAPI.csproj",
         "projectName": "AuthAPI",
-        "projectPath": "C:\\Personal Projects\\Full Stack Projects\\Login and Sign Up Page\\AngularAuthAPI\\AuthAPI\\AuthAPI\\AuthAPI.csproj",
+        "projectPath": "C:\\Personal Projects\\Full Stack Projects\\Login and Sign Up Page\\JWT Authentication Project\\AngularAuthAPI\\AuthAPI\\AuthAPI\\AuthAPI.csproj",
         "packagesPath": "C:\\Users\\PYELNE\\.nuget\\packages\\",
-        "outputPath": "C:\\Personal Projects\\Full Stack Projects\\Login and Sign Up Page\\AngularAuthAPI\\AuthAPI\\AuthAPI\\obj\\",
+        "outputPath": "C:\\Personal Projects\\Full Stack Projects\\Login and Sign Up Page\\JWT Authentication Project\\AngularAuthAPI\\AuthAPI\\AuthAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

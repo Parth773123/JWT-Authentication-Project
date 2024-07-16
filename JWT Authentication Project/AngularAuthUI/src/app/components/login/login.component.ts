@@ -46,7 +46,12 @@ export class LoginComponent implements OnInit {
 
   onLogin() {
     if (this.loginForm.valid) {
+      let username = this.loginForm.get('username')?.value;
+      let password = this.loginForm.get('password')?.value;
+
       console.log('Login Successful');
+      console.log(`UserName: ${username}`);
+      console.log(`Password: ${password}`);
 
       this.auth.login(this.loginForm.value).subscribe({
         next: (res) => {
@@ -54,6 +59,7 @@ export class LoginComponent implements OnInit {
             timeOut: 5000,
           });
           this.loginForm.reset();
+          this.auth.storeToken(res.token);
           this.router.navigate(['dashboard']);
         },
         error: (err) => {

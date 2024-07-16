@@ -1,6 +1,7 @@
 ﻿using AuthAPI.Context;
 using AuthAPI.Helpers;
 using AuthAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -96,12 +97,6 @@ namespace AuthAPI.Controllers
             });
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAllUsers()
-        {
-            return Ok(await _authContext.Users.ToListAsync());
-        }
-
         private async Task<bool> CheckUsernameExistsAsync(string username)
         {
             return await _authContext.Users.AnyAsync(x => x.UserName == username);
@@ -133,6 +128,13 @@ namespace AuthAPI.Controllers
 
             var token = jwtTokenHandler.CreateToken(tokenDescriptor);
             return jwtTokenHandler.WriteToken(token);
+        }
+
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            return Ok(await _authContext.Users.ToListAsync());
         }
     }
 }

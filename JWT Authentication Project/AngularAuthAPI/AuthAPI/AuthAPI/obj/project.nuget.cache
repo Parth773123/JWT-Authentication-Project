@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q0h31V+wZp1rq7xnoZ1uxTfYdNs81uECphKWpnxf/W/2EwCK+t/0teHY+6FzBUhoiVdmRtATml2WgSb4UAkgIw==",
+  "dgSpecHash": "tj2YT1GSfcOF2t3wDnggUnQnBs562xrIXykt20DGQcbWMwIT2b4u2tlJVQew71T5cbXsX3yoIBMt+FqyK3JDTQ==",
   "success": true,
-  "projectFilePath": "C:\\Personal Projects\\Full Stack Projects\\Login and Sign Up Page\\AngularAuthAPI\\AuthAPI\\AuthAPI\\AuthAPI.csproj",
+  "projectFilePath": "C:\\Personal Projects\\Full Stack Projects\\Login and Sign Up Page\\JWT Authentication Project\\AngularAuthAPI\\AuthAPI\\AuthAPI\\AuthAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PYELNE\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\PYELNE\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
