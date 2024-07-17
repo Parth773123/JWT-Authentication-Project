@@ -13,7 +13,7 @@ export const authGuard: CanActivateFn = (route, state) => {
   } else {
     router.navigate(['login']);
     toast.error('Please Login First', 'ERROR', {
-      timeOut: 5000,
+      timeOut: 3000,
     });
     return false;
   }

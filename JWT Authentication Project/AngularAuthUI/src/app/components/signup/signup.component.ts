@@ -54,7 +54,7 @@ export class SignupComponent implements OnInit {
       this.auth.signUp(this.signUpForm.value).subscribe({
         next: (res) => {
           this.toast.success(res.message, 'SUCCESS', {
-            timeOut: 5000,
+            timeOut: 3000,
           });
           this.signUpForm.reset();
           this.router.navigate(['login']);
@@ -62,7 +62,7 @@ export class SignupComponent implements OnInit {
         error: (err) => {
           if (err.error && err.error.message) {
             this.toast.error(err.error.message, 'ERROR', {
-              timeOut: 5000,
+              timeOut: 3000,
             });
           } else {
             alert('An error occured, Please try again later');

@@ -130,7 +130,7 @@ namespace AuthAPI.Controllers
             return jwtTokenHandler.WriteToken(token);
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAllUsers()
         {

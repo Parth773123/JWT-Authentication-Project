@@ -1,50 +1,83 @@
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <i class="fab fa-github fa-2x mx-3 ps-1"></i>
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-mdb-toggle="collapse"
-      data-mdb-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <form class="me-3">
-        <div class="form-white input-group" style="width: 250px">
-          <input
-            type="search"
-            class="form-control rounded"
-            placeholder="Search or jump to... ( / )"
-            aria-label="Search"
-            aria-describedby="search-addon"
-          />
+<div class="outer1">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="../../../assets/github-mark-white.png" alt="" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="me-3">
+          <div class="form-white input-group" style="width: 250px">
+            <input
+              type="search"
+              class="form-control rounded"
+              placeholder="Search or jump to... ( / )"
+              aria-label="Search"
+              aria-describedby="search-addon"
+            />
+          </div>
+        </form>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pull request</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Issues</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Marketplace</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Explore</a>
+          </li>
+        </ul>
+        <div class="navbar-nav d-flex flex-row ms-auto">
+          <a class="nav-link"
+            >Hello,
+            <h5>{{ fullName }}</h5></a
+          >
+          <button class="btn btn-danger" (click)="logout()">Logout</button>
         </div>
-      </form>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pull request</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Issues</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Marketplace</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Explore</a>
-        </li>
-      </ul>
-      <div class="navbar-nav d-flex flex-row ms-auto me-3">
-        <a class="nav-link">Hello, {{ fullName }}</a>
       </div>
     </div>
-  </div>
-</nav>
-<!-- Navbar -->
+  </nav>
+  <!-- Navbar -->
+
+  <ng-container *ngIf="role === 'Admin'">
+    <!-- table -->
+    <section class="table_section">
+      <table class="table table-striped">
+        <thead class="table_head">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">UserName</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <th scope="row">{{ user.id }}</th>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.userName }}</td>
+            <td>{{ user.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <!-- table -->
+  </ng-container>
+</div>

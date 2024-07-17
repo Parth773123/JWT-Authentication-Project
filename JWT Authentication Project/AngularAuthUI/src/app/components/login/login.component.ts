@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import ValidateForm from 'src/app/helpers/validateform';
 import { AuthService } from 'src/app/services/auth.service';
+import { UserStoreService } from 'src/app/services/user-store.service';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private auth: AuthService,
     private router: Router,
-    private toast: ToastrService
+    private toast: ToastrService,
+    private userStore: UserStoreService
   ) {}
 
   type: string = 'password';
@@ -56,15 +58,18 @@ export class LoginComponent implements OnInit {
       this.auth.login(this.loginForm.value).subscribe({
         next: (res) => {
           this.toast.success(res.message, 'SUCCESS', {
-            timeOut: 5000,
+            timeOut: 3000,
           });
           this.loginForm.reset();
           this.auth.storeToken(res.token);
+          const tokenPayload = this.auth.decodedToken();
+          this.userStore.setFullNameFromStore(tokenPayload.unique_name);
+          this.userStore.setRoleFromStore(tokenPayload.role);
           this.router.navigate(['dashboard']);
         },
         error: (err) => {
           this.toast.error(err.error.message, 'ERROR', {
-            timeOut: 5000,
+            timeOut: 3000,
           });
         },
       });

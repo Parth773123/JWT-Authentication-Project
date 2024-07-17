@@ -11,3 +11,34 @@
   .navbar-dark .navbar-nav .nav-link:focus {
     color: rgba(255, 255, 255, 0.75);
   }
+
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .table_section {
+    display: flex;
+    margin-top: 15vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .table_head {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .table {
+    width: 70%;
+    height: 400px;
+  }
+
+  // .outer1 { 
+  //   height: 100vh;
+  //   background: linear-gradient(to top, #c9c9ff 50%, #6e6ef6 90%) no-repeat;
+  //   overflow: auto; /* Ensure scrollbar if content overflows */
+  //   padding: 0; /* Reset padding */
+  //   margin: 0; /* Reset margin */
+  // }

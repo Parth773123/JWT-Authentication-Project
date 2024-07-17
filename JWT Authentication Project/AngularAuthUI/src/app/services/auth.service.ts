@@ -48,7 +48,6 @@ export class AuthService {
     const token = this.getToken();
 
     if (token) {
-      console.log(this.jwtHelper.decodeToken(token));
       return this.jwtHelper.decodeToken(token);
     } else {
       console.error('No token found');
