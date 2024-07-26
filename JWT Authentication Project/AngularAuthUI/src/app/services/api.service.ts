@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService implements OnInit {
-  baseUrl: string = 'https://localhost:44373/api/User';
+  baseUrl: string = 'https://localhost:44373/api/User/getAllUsers';
 
   constructor(private http: HttpClient) {}
 

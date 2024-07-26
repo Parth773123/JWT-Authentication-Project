@@ -30,6 +30,8 @@ export class LoginComponent implements OnInit {
   isText: boolean = false;
   eyeIcon: string = 'fa fa-eye-slash';
   loginForm!: FormGroup;
+  public resetPasswordEmail!: string;
+  public isValidEmail!: boolean;
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -61,7 +63,8 @@ export class LoginComponent implements OnInit {
             timeOut: 3000,
           });
           this.loginForm.reset();
-          this.auth.storeToken(res.token);
+          this.auth.storeToken(res.accessToken);
+          this.auth.storeRefreshToken(res.refreshToken);
           const tokenPayload = this.auth.decodedToken();
           this.userStore.setFullNameFromStore(tokenPayload.unique_name);
           this.userStore.setRoleFromStore(tokenPayload.role);
@@ -76,6 +79,27 @@ export class LoginComponent implements OnInit {
     } else {
       ValidateForm.validateAllFormFields(this.loginForm);
       alert('Form in not valid');
+    }
+  }
+
+  checkValidEmail(event: string) {
+    const value = event;
+    const pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/i;
+
+    this.isValidEmail = pattern.test(value);
+
+    return this.isValidEmail;
+  }
+
+  confirmToSend() {
+    if (this.checkValidEmail(this.resetPasswordEmail)) {
+      console.log(this.resetPasswordEmail);
+      this.resetPasswordEmail = '';
+
+      const btnRef = document.getElementById('closeBtn');
+      btnRef?.click();
+
+      // API Call to be done
     }
   }
 }
